@@ -1,79 +1,21 @@
--- Basic Settings
-require("basic")
+require "core"
 
--- shortcut keymap
-require("keybindings")
+local custom_init_path = vim.api.nvim_get_runtime_file("lua/custom/init.lua", false)[1]
 
--- Packer plugin management
-require("plugins")
+if custom_init_path then
+  dofile(custom_init_path)
+end
 
--- Theme settings
-require("colorscheme")
+require("core.utils").load_mappings()
 
--- side file browser
-require("plugin-config.nvim-tree")
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
--- bufferline
-require("plugin-config.bufferline")
+-- bootstrap lazy.nvim!
+if not vim.loop.fs_stat(lazypath) then
+  require("core.bootstrap").gen_chadrc_template()
+  require("core.bootstrap").lazy(lazypath)
+end
 
--- lualine
-require("plugin-config.lualine")
-
--- telescope
-require("plugin-config.telescope")
-
--- dashboard
-require("plugin-config.dashboard")
-
--- project
-require("plugin-config.project")
-
--- nvim-treesitter
-require("plugin-config.nvim-treesitter")
-
--- mason
-require("plugin-config.mason")
-
--- indent-blankline
-require("plugin-config.indent-blankline")
-
--- Comment
-require("plugin-config.Comment")
-
--- gitsigns
-require("plugin-config.gitsigns")
-
--- symbols-outline
-require("plugin-config.symbols-outline")
-
--- autopairs
-require("plugin-config.nvim-autopairs")
-
--- impatient
-require("plugin-config.impatient")
-
--- auto-save
-require("plugin-config.auto-save")
-
--- todo Comment
-require("plugin-config.todo-comments")
-
--- colorizer
-require("plugin-config.nvim-colorizer")
-
--- trouble
-require("plugin-config.trouble")
-
--- nvim-treesitter-context
-require("plugin-config.nvim-treesitter-context")
-
--- twilight
-require("plugin-config.twilight")
-
--- zen-mode
-require("plugin-config.zen-mode")
-
--- noice
---require("plugin-config.noice")
-
-require("plugin-config.asynctasks")
+dofile(vim.g.base46_cache .. "defaults")
+vim.opt.rtp:prepend(lazypath)
+require "plugins"
