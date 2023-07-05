@@ -35,6 +35,7 @@ alias c="peaclock"
 alias so="source"
 alias tl="~/scripts/translate.py"
 #export PATH=$PATH:~/Qt5.14.2/Tools/QtCreator/bin
+export PATH=$PATH:~/.cargo/bin/
 setopt no_nomatch
 #fzf
 ##
