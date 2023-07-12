@@ -25,9 +25,10 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export EDITOR=nvim
 export TERMINAL=st
+export OPENAI_API_KEY="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"
 export all_proxy="http://127.0.0.1:20172"
-alias ls='ls --color=auto'
-alias ll='ls -al --color=auto'
+alias ls='exa --color=auto'
+alias ll='exa -al --color=auto'
 alias la="lazygit"
 alias ra="ranger"
 alias s="neofetch"
@@ -68,6 +69,7 @@ _fzf_compgen_dir() {
 
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-    exec startx
+    exec  startx ~/.config/chadwm/scripts/run.sh 
 fi
 
+eval "$(zoxide init zsh)"
