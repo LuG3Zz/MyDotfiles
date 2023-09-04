@@ -25,10 +25,10 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export EDITOR=nvim
 export TERMINAL=st
-export OPENAI_API_KEY="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"
+export OPENAI_API_KEY="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"
 export all_proxy="http://127.0.0.1:20172"
-alias ls='exa --color=auto'
-alias ll='exa -al --color=auto'
+alias ls='lsd --color=auto'
+alias ll='lsd -al --color=auto'
 alias la="lazygit"
 alias ra="ranger"
 alias s="neofetch"
