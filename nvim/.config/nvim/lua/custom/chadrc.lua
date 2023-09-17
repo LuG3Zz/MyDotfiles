@@ -1,6 +1,6 @@
 ---@type ChadrcConfig
 local M = {}
-M.ui = { theme = "onedark" }
+M.ui = { theme = "oceanic-next" }
 M.ui.transparency = false
 M.ui.nvdash = {
   load_on_startup = true,

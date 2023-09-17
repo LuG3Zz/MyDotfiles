@@ -26,7 +26,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 export EDITOR=nvim
 export TERMINAL=st
 export OPENAI_API_KEY="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"
-export all_proxy="http://127.0.0.1:20172"
+#export all_proxy="http://127.0.0.1:20172"
 alias ls='lsd --color=auto'
 alias ll='lsd -al --color=auto'
 alias la="lazygit"
@@ -37,6 +37,8 @@ alias so="source"
 alias tl="~/scripts/translate.py"
 #export PATH=$PATH:~/Qt5.14.2/Tools/QtCreator/bin
 export PATH=$PATH:~/.cargo/bin/
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+export LIBGL_ALWAYS_INDIRECT=1
 setopt no_nomatch
 #fzf
 ##

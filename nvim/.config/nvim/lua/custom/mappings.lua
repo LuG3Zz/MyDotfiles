@@ -97,8 +97,6 @@ M.lspsaga = {
     ["gd"] = { "<cmd>Lspsaga goto_definition<CR>", "Go to definition" },
   },
 }
-vim.keymap.set("n", "<leader>o", "<cmd>Portal jumplist backward<cr>")
-vim.keymap.set("n", "<leader>i", "<cmd>Portal jumplist forward<cr>")
 M.portal = {
   n = {
     ["<leader>j"] = { "<cmd>Portal jumplist backward<cr>", "go to prev" },
@@ -116,5 +114,13 @@ M.gpt = {
     ["<leader>ge"] = { "<cmd>ChatGPTRun explain_code<cr>", "use GPT explain select code" },
     ["<leader>gc"] = { "<cmd>ChatGPTRun docstring<cr>", "use GPT Generate code comments." },
   },
+}
+M.gopher ={
+  plugin =true,
+  n = {
+    ["<leader>gsj"] = { "<cmd> GoTagAdd json", "Add json struct tags" },
+    ["<leader>gsy"] = { "<cmd> GoTagAdd yaml", "Add yaml struct tags" },
+  },
+
 }
 return M
